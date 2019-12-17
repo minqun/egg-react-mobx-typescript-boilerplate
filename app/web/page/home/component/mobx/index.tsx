@@ -1,11 +1,11 @@
 import React, { Component, CSSProperties } from 'react';
 import { observable } from 'mobx';
 import { Observer, observer, inject } from 'mobx-react';
-import AppStore from './store';
+// import AppStore from './store';
 import { StoreProps } from '../../../../typings/type';
 
 
-const info = observable({ text: "Mobx Observer Local Test" });
+const info = observable({ text: "Mobx" });
 
 class LocalReactive extends Component {
 
@@ -27,20 +27,18 @@ class LocalReactive extends Component {
   } 
 }
 
-@inject('configStore')
+@inject('testStore')
 @observer
 class MobXApp extends Component<StoreProps> {
-  store: AppStore;
   constructor(props) {
     super(props);
-    this.store = new AppStore();
   }
 
   render() {
-    const { configStore } = this.props;
+    const { testStore } = this.props;
     // [mobx] Dynamic observable objects cannot be frozen https://github.com/mobxjs/mobx/blob/master/CHANGELOG.md
-    return <div style={{...configStore!.themeStyle}}>
-        <div style={{...this.store.style}} onClick={() => { this.store.plus()}}>点我:{this.store.number}</div>
+    return <div style={{...testStore!.themeStyle}}>
+        <div style={{...testStore.style}} onClick={() => { testStore.plus()}}>点我:{testStore.number}</div>
         <LocalReactive></LocalReactive>
     </div>
   }

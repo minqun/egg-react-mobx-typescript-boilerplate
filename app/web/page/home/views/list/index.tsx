@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Tabs } from 'antd';
-import Header from '../../../../component/header/header';
+
 import { TabProps } from '../../../../typings/type';
 import './index.css';
 import { observable } from 'mobx';
@@ -16,8 +16,8 @@ const tabItemClick = (key) => {
 // must export, not export default
 @inject("infoStore")
 @observer
-export class Tab extends Component<TabProps, any> {
-  constructor (props) {
+export class List extends Component<TabProps, any> {
+  constructor(props) {
     console.log(props, 's')
     super(props);
   }
@@ -25,17 +25,16 @@ export class Tab extends Component<TabProps, any> {
     console.log(this.props, 'props')
     let { infoStore } = this.props
     return <div>
-      <Header></Header>
       <div className="tab">
         <h1>{infoStore.info.message.text}</h1>
         <Tabs defaultActiveKey="1" onChange={tabItemClick}>
           <TabPane tab="MobX" key="1">
-          Content of Tab Pane 1
+            Content of Tab Pane 1
             {/* <MobXApp /> */}
-            </TabPane>
+          </TabPane>
           <TabPane tab="Tab 2" key="2">Content of Tab Pane 2</TabPane>
           <TabPane tab="Tab 3" key="3">Content of Tab Pane 3</TabPane>
-        </Tabs> 
+        </Tabs>
       </div>
     </div>;
   }

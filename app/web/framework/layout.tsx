@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { inject } from 'mobx-react';
 
-@inject('configStore')
+@inject('testStore')
 export default class Layout extends Component<any> {
   render() {
-    const { configStore } = this.props;
+    const { testStore } = this.props;
     return <html>
       <head>
         <title>{this.props.title}</title>
@@ -14,7 +14,7 @@ export default class Layout extends Component<any> {
         <meta name="description" content={this.props.description}></meta>
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"></link>
       </head>
-      <body style={{...configStore.themeStyle}}><div id="app">{this.props.children}</div></body>
+      <body style={{...testStore.themeStyle}}><div id="app">{this.props.children}</div></body>
     </html>;
+  
   }
-}

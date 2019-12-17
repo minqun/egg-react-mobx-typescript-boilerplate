@@ -1,5 +1,5 @@
 
 import { Application } from 'egg';
-export default (app: Application) => {
-  app.get('/', app.controller.home.index);
+export default (app) => {
+  app.get('*', app.controller.home.index);
 };

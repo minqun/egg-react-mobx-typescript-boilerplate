@@ -1,6 +1,6 @@
 # egg-react-typescript-boilerplate
 
-基于 Egg + React + TypeScript + Webpack 服务端渲染工程骨架
+基于 Egg + React + TypeScript + mobx + Webpack 服务端渲染工程骨架
 
 ## 1. 版本
 

@@ -3,27 +3,26 @@
 const path = require('path');
 const resolve = (filepath) => path.resolve(__dirname, filepath);
 module.exports = {
-  entry: {
-    home: 'app/web/page/home/index.tsx'
-  },
-  module: {
-    rules: [
-      {
-        less: {
-          include: [resolve('app/web'), resolve('node_modules')],
-          options: {
-            javascriptEnabled: true,
-            modifyVars: {
-              'primary-color': 'red',
-              'link-color': '#1DA57A',
-              'border-radius-base': '2px'
+    entry: {
+        home: 'app/web/page/home/index.tsx'
+    },
+    module: {
+        rules: [{
+                less: {
+                    include: [resolve('app/web'), resolve('node_modules')],
+                    options: {
+                        javascriptEnabled: true,
+                        modifyVars: {
+                            'primary-color': 'red',
+                            'link-color': '#1DA57A',
+                            'border-radius-base': '2px'
+                        }
+                    }
+                }
+            },
+            {
+                typescript: true
             }
-          }
-        }
-      }, 
-      {
-        typescript: true
-      }
-    ],
-  }
+        ],
+    }
 };

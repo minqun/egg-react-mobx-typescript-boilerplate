@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Tabs } from 'antd';
-import Header from '../../../../component/header/header';
-import { TabProps } from '../../../../typings/type';
+
+import { TabProps } from '../../../typings/type';
 import './index.css';
 import { observable } from 'mobx';
 import { observer, inject } from 'mobx-react';
@@ -25,7 +25,6 @@ export class Tab extends Component<TabProps, any> {
     console.log(this.props, 'props')
     let { infoStore } = this.props
     return <div>
-      <Header></Header>
       <div className="tab">
         <h1>{infoStore.info.message.text}</h1>
         <Tabs defaultActiveKey="1" onChange={tabItemClick}>

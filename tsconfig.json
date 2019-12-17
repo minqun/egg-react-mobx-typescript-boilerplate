@@ -12,6 +12,8 @@
   "include": [
     "index.ts",
     "app/**/*.ts",
+    "app/**/**/*.ts",
+    "app/**/**/**/*.ts",
     "config/**/*.ts",
     "mock/**/*.ts",
     "test/**/*.ts"
